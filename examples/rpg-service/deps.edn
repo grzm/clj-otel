@@ -43,7 +43,7 @@
 
                               ;; Disable logs export
                               "-Dotel.logs.exporter=none"]}
-
+           :otel-no-jetty {:jvm-opts ["-Dotel.instrumentation.jetty.enabled=false"]}
            ;; Redirect SLF4J, Apache (Jakarta) Commons Logging and java.util.logging to Log4j2 implementation.
            :log4j {:extra-deps {org.apache.logging.log4j/log4j-core        {:mvn/version "2.23.1"}
                                 org.apache.logging.log4j/log4j-jcl         {:mvn/version "2.23.1"}

@@ -5,7 +5,6 @@
             [example.rpg-service.system :as system]
             [org.httpkit.client :as client]))
 
-
 (defonce ^{:doc "Map of components in the running system."} system
   nil)
 
@@ -52,13 +51,19 @@
   [id]
   (do-get-request (str "/item/" id)))
 
-
-
 (comment
   (start!)
   (get-character 1)
   (get-inventory 2)
   (get-item 4)
+  (get-item 100)
   (stop!)
-  ;
-)
+
+  (dotimes [_ 10]
+    (do
+      (get-character 1)
+      (get-inventory 2)
+      (get-item 4)
+      (get-item 100)
+      :done))
+  :end)
